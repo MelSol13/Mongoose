@@ -11,7 +11,7 @@ module.exports.muestraEstudiantes = (req, res) => {
 //Me regresa un documento de estudiante en base al ID que se reciba de la URL
 module.exports.muestraEstudiante = (req,res)=>{
     //db.estudiantes.find({-id:ObjectId('asdadadadad')})
-    Estudiante.findOne({id: req.params.id})
+    Estudiante.findOne({_id: req.params.id})
     .then(unEstudiante => res.json({estudiante: unEstudiante}))
     .catch(err => res.json({message:"Algo salió mal", error: err}));
 };
